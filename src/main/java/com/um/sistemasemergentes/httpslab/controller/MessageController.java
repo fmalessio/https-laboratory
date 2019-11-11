@@ -1,18 +1,14 @@
 package com.um.sistemasemergentes.httpslab.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/message")
+@RequestMapping("/emergentes")
 public class MessageController {
 
-    // @PostMapping("/send")
-    @GetMapping("/send")
-    public String loadMessage() {
-        return "OK";
+    @PostMapping("/message")
+    public String getMessage(@RequestBody String clientMsg) {
+        return "Mensaje recibido correctamente: " + clientMsg;
     }
 
 }
